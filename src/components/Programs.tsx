@@ -125,13 +125,13 @@ export default function Programs() {
                     ))}
 
                     {/* CTA Card at the end */}
-                    <div className="h-[70vh] w-[40vw] flex items-center justify-center">
-                        <div className="text-center p-10">
-                            <h3 className="text-display text-5xl text-charcoal mb-6">Join Us Today</h3>
-                            <p className="text-slate text-xl mb-8 max-w-md mx-auto">
+                    <div className="min-h-[50vh] md:h-[70vh] w-full md:w-[40vw] flex items-center justify-center py-10 md:py-0">
+                        <div className="text-center p-6 md:p-10 w-full">
+                            <h3 className="text-display text-4xl md:text-5xl text-charcoal mb-6">Join Us Today</h3>
+                            <p className="text-slate text-lg md:text-xl mb-8 max-w-md mx-auto">
                                 Take the first step towards a bright future for your child.
                             </p>
-                            <a href="#admissions" className="btn-primary">
+                            <a href="#admissions" className="btn-primary w-full md:w-auto">
                                 Start Admission
                             </a>
                         </div>
