@@ -73,7 +73,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${outfit.variable} ${sourceSans.variable}`}>
-      <body className="antialiased bg-white text-charcoal">
+      <body className="antialiased bg-white text-charcoal overflow-x-hidden">
         <JsonLd />
         {children}
       </body>

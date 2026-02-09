@@ -15,7 +15,7 @@ export default function Hero() {
     const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
     return (
-        <section ref={containerRef} className="relative h-[100vh] flex items-center justify-center overflow-hidden">
+        <section ref={containerRef} className="relative h-[100dvh] flex items-center justify-center overflow-hidden">
             {/* Parallax Background */}
             <motion.div
                 className="absolute inset-0 z-0"
@@ -45,7 +45,7 @@ export default function Hero() {
                 </motion.div>
 
                 <motion.h1
-                    className="font-display text-5xl md:text-8xl lg:text-9xl mb-8 leading-[0.9] tracking-tighter"
+                    className="font-display text-4xl md:text-8xl lg:text-9xl mb-8 leading-[0.9] tracking-tighter"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
