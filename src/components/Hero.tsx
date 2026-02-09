@@ -15,29 +15,20 @@ export default function Hero() {
     const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
     return (
-        {/* Cinematic Background */ }
-        < motion.div
-                className = "absolute inset-0 z-0"
-    style = {{ y, opacity }
-}
+        <section ref={containerRef} className="relative h-[100vh] flex items-center justify-center overflow-hidden">
+            {/* Parallax Background */}
+            <motion.div
+                className="absolute inset-0 z-0"
+                style={{ y, opacity }}
             >
-                <div className="absolute inset-0 bg-black/50 z-10" />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-black/30 z-10" />
+                <div className="absolute inset-0 bg-black/40 z-10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 z-10" />
 
-{/* Noise texturizer for film grain effect */ }
-<div className="absolute inset-0 opacity-[0.05] z-10 pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+                <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+            </motion.div>
 
-{/* High Quality Image with Ken Burns Effect */ }
-<motion.div
-    className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"
-    initial={{ scale: 1 }}
-    animate={{ scale: 1.1 }}
-    transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
-/>
-            </motion.div >
-
-    {/* Content */ }
-    < div className = "container-wide relative z-20 text-center text-white pt-20 px-4" >
+            {/* Content */}
+            < div className="container-wide relative z-20 text-center text-white pt-20 px-4" >
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -94,12 +85,12 @@ export default function Hero() {
                 </motion.div>
             </div >
 
-    {/* Scroll Indicator */ }
-    < motion.div
-className = "absolute bottom-12 left-1/2 -translate-x-1/2 z-20 text-white/20 flex flex-col items-center gap-2"
-initial = {{ opacity: 0 }}
-animate = {{ opacity: 1 }}
-transition = {{ delay: 1.5, duration: 1 }}
+            {/* Scroll Indicator */}
+            < motion.div
+                className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 text-white/20 flex flex-col items-center gap-2"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.5, duration: 1 }}
             >
                 <div className="text-[10px] tracking-[0.2em] uppercase">Scroll</div>
                 <motion.div
