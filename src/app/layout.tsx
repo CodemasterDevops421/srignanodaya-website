@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Outfit, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
-import MouseFollower from "@/components/MouseFollower";
 import JsonLd from "@/components/JsonLd";
 
 const cormorant = Cormorant_Garamond({
@@ -76,7 +75,6 @@ export default function RootLayout({
     <html lang="en" className={`${cormorant.variable} ${outfit.variable} ${sourceSans.variable}`}>
       <body className="antialiased bg-white text-charcoal">
         <JsonLd />
-        <MouseFollower />
         {children}
       </body>
     </html>
