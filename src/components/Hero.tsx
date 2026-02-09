@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform, motion, useMotionValue, useSpring } from "framer-motion";
 import { ArrowDown, CheckCircle2, Play } from "lucide-react";
 
 export default function Hero() {
@@ -14,8 +14,29 @@ export default function Hero() {
     const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
     const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
+    // Mouse Parallax
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    const springConfig = { damping: 25, stiffness: 150 };
+    const springX = useSpring(mouseX, springConfig);
+    const springY = useSpring(mouseY, springConfig);
+
+    function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+        const { left, top, width, height } = currentTarget.getBoundingClientRect();
+        const x = clientX - left - width / 2;
+        const y = clientY - top - height / 2;
+
+        mouseX.set(x * 0.05); // Move 5% of mouse distance
+        mouseY.set(y * 0.05);
+    }
+
     return (
-        <section ref={containerRef} className="relative h-[100dvh] flex items-center justify-center overflow-hidden">
+        <section
+            ref={containerRef}
+            className="relative h-[100dvh] flex items-center justify-center overflow-hidden"
+            onMouseMove={handleMouseMove}
+        >
             {/* Parallax Background */}
             <motion.div
                 className="absolute inset-0 z-0"
@@ -29,6 +50,7 @@ export default function Hero() {
                     initial={{ scale: 1 }}
                     animate={{ scale: 1.1 }}
                     transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
+                    style={{ x: springX, y: springY }}
                 />
             </motion.div>
 
