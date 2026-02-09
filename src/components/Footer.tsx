@@ -33,15 +33,22 @@ export default function Footer() {
                         <div className="space-y-2 text-sm text-white/80">
                             <p className="flex items-start gap-3">
                                 <MapPin size={16} className="text-gold shrink-0 mt-1" />
-                                <span>D.No: 2-75, Near Penthu Coast Church,<br />Gandhi Bomma Centre, Kanuru - 520007</span>
+                                <a
+                                    href="https://maps.google.com/?q=D.No: 2-75, Near Penthu Coast Church, Gandhi Bomma Centre, Kanuru - 520007"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-gold transition-colors"
+                                >
+                                    D.No: 2-75, Near Penthu Coast Church,<br />Gandhi Bomma Centre, Kanuru - 520007
+                                </a>
                             </p>
                             <p className="flex items-center gap-3">
                                 <Phone size={16} className="text-gold shrink-0" />
-                                <span>9390017772, 9397961714</span>
+                                <a href="tel:+919390017772" className="hover:text-gold transition-colors">9390017772</a>, <a href="tel:+919397961714" className="hover:text-gold transition-colors">9397961714</a>
                             </p>
                             <p className="flex items-center gap-3">
                                 <Mail size={16} className="text-gold shrink-0" />
-                                <span>srignanodayaschool@gmail.com</span>
+                                <a href="mailto:srignanodayaschool@gmail.com" className="hover:text-gold transition-colors">srignanodayaschool@gmail.com</a>
                             </p>
                         </div>
                     </div>

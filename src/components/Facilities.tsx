@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Library, Bus, Utensils, Wifi, Monitor, HeartPulse } from "lucide-react";
 
 // ... imports
@@ -103,12 +104,14 @@ export default function Facilities() {
                         >
                             {/* Background Image */}
                             <div className="absolute inset-0 transition-transform duration-1000 group-hover:scale-110">
-                                <img
+                                <Image
                                     src={facility.image}
                                     alt={facility.title}
-                                    className="w-full h-full object-cover filter brightness-[0.8] group-hover:brightness-100 transition-all duration-500"
+                                    fill
+                                    className="object-cover filter brightness-[0.8] group-hover:brightness-100 transition-all duration-500"
+                                    sizes="(max-width: 768px) 100vw, 33vw"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500 z-10" />
                             </div>
 
                             {/* Content */}

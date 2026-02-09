@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { ArrowRight, GraduationCap, Baby } from "lucide-react";
 
 const programs = [
@@ -78,13 +79,15 @@ export default function Programs() {
                             className="group relative h-[60vh] md:h-[70vh] w-full md:w-[60vw] lg:w-[45vw] overflow-hidden rounded-3xl bg-white shadow-xl transition-transform hover:-translate-y-2 shrink-0"
                         >
                             {/* Image Background */}
-                            <div className="absolute inset-0 h-1/2 overflow-hidden">
-                                <img
+                            <div className="absolute inset-0 h-1/2 overflow-hidden relative">
+                                <Image
                                     src={program.image}
                                     alt={program.title}
-                                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/90" />
+                                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/90 z-10" />
                             </div>
 
                             {/* Content Card */}
