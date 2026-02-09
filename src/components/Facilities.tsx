@@ -111,12 +111,12 @@ export default function Facilities() {
                                     className="object-cover filter brightness-[0.8] group-hover:brightness-100 transition-all duration-500"
                                     sizes="(max-width: 768px) 100vw, 33vw"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500 z-10" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 transition-opacity duration-500 z-10" />
                             </div>
 
                             {/* Content */}
-                            <div className="absolute inset-0 p-8 flex flex-col justify-end text-white">
-                                <div className="transform transition-transform duration-500 translate-y-2 group-hover:translate-y-0">
+                            <div className="absolute inset-0 p-8 flex flex-col justify-end text-white z-20">
+                                <div className="transform transition-transform duration-500 translate-y-2 group-hover:translate-y-0 drop-shadow-lg">
                                     <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl w-fit mb-4 text-gold group-hover:bg-gold group-hover:text-charcoal transition-colors duration-300">
                                         <facility.icon size={24} />
                                     </div>
