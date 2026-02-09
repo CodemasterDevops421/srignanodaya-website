@@ -12,6 +12,7 @@ import Stats from "@/components/Stats";
 import Testimonials from "@/components/Testimonials";
 import Admissions from "@/components/Admissions";
 import Footer from "@/components/Footer";
+import FloatingCTA from "@/components/FloatingCTA";
 
 export default function Home() {
   useEffect(() => {
@@ -49,6 +50,7 @@ export default function Home() {
       <Testimonials />
       <Admissions />
       <Footer />
+      <FloatingCTA />
     </main>
   );
 }

@@ -2,8 +2,9 @@
 
 import React, { useRef } from "react";
 import { useInView, motion, useSpring, useTransform } from "framer-motion";
+import { Trophy, Users, GraduationCap, Star } from "lucide-react";
 
-function Counter({ value, label }: { value: number; label: string }) {
+function Counter({ value, label, icon: Icon }: { value: number; label: string; icon: any }) {
     const ref = useRef<HTMLDivElement>(null);
     const isInView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -17,12 +18,15 @@ function Counter({ value, label }: { value: number; label: string }) {
     }, [isInView, value, spring]);
 
     return (
-        <div ref={ref} className="flex flex-col items-center text-center">
-            <div className="text-6xl md:text-7xl font-display font-light text-charcoal mb-2 tabular-nums">
-                <motion.span>{display}</motion.span>
-                <span className="text-gold text-4xl align-top">+</span>
+        <div ref={ref} className="flex flex-col items-center text-center group">
+            <div className="mb-4 p-4 rounded-full bg-gold/10 text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-300">
+                <Icon size={32} />
             </div>
-            <p className="text-sm font-heading font-medium tracking-widest uppercase text-slate-500">
+            <div className="text-5xl md:text-6xl font-display font-medium text-charcoal mb-2 tabular-nums">
+                <motion.span>{display}</motion.span>
+                <span className="text-gold text-3xl align-top">+</span>
+            </div>
+            <p className="text-sm font-heading font-bold tracking-widest uppercase text-slate-400 group-hover:text-gold transition-colors">
                 {label}
             </p>
         </div>
@@ -30,19 +34,25 @@ function Counter({ value, label }: { value: number; label: string }) {
 }
 
 const stats = [
-    { value: 16, label: "Years of Excellence" },
-    { value: 1200, label: "Students Enrolled" },
-    { value: 60, label: "Expert Faculty" },
-    { value: 100, label: "Results Guaranteed" },
+    { value: 16, label: "Years of Excellence", icon: Trophy },
+    { value: 1200, label: "Students Enrolled", icon: Users },
+    { value: 60, label: "Expert Faculty", icon: GraduationCap },
+    { value: 100, label: "Results Guaranteed", icon: Star },
 ];
 
 export default function Stats() {
     return (
-        <section className="py-24 bg-off-white border-y border-gray-200">
-            <div className="container-wide">
+        <section className="py-24 bg-white border-y border-gray-100 relative overflow-hidden">
+            {/* Decorative Background */}
+            <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none">
+                <div className="absolute top-10 left-10 w-32 h-32 rounded-full border-4 border-charcoal" />
+                <div className="absolute bottom-10 right-10 w-48 h-48 rounded-full border-4 border-gold" />
+            </div>
+
+            <div className="container-wide relative z-10">
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
                     {stats.map((stat, index) => (
-                        <Counter key={index} value={stat.value} label={stat.label} />
+                        <Counter key={index} value={stat.value} label={stat.label} icon={stat.icon} />
                     ))}
                 </div>
             </div>
