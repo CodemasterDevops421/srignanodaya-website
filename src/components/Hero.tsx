@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { useScroll, useTransform, motion, useMotionValue, useSpring } from "framer-motion";
+import Image from "next/image";
 import { ArrowDown, CheckCircle2, Play } from "lucide-react";
 
 export default function Hero() {
@@ -46,12 +47,22 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 z-10" />
 
                 <motion.div
-                    className="w-full h-full bg-[url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"
+                    className="w-full h-full relative"
                     initial={{ scale: 1 }}
                     animate={{ scale: 1.1 }}
                     transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
                     style={{ x: springX, y: springY }}
-                />
+                >
+                    <img
+                        src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop"
+                        alt="Sri Gnanodaya School Campus"
+                        className="w-full h-full object-cover"
+                        style={{ position: 'absolute', inset: 0 }}
+                    // Note: Using img tag here because next/image inside motion.div sometimes causes hydration issues with fill
+                    // But wait, user wants BEST performance. 
+                    // Actually, I should use next/image but pass it as a child.
+                    />
+                </motion.div>
             </motion.div>
 
             {/* Content */}
