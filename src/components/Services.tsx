@@ -108,8 +108,8 @@ export default function Services() {
                             <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 group-hover:bg-gold group-hover:text-charcoal text-gold">
                                 <service.icon size={28} />
                             </div>
-                            <h3 className="text-xl font-heading font-bold text-white mb-3 group-hover:text-gold transition-colors">{service.title}</h3>
-                            <p className="text-white/50 text-sm leading-relaxed group-hover:text-white/80 transition-colors">
+                            <h3 className="text-xl font-heading font-bold text-slate-100 mb-3 group-hover:text-gold transition-colors">{service.title}</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed group-hover:text-white transition-colors">
                                 {service.desc}
                             </p>
                         </motion.div>
