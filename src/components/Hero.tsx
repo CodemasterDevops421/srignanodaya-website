@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
-import { ArrowDown, CheckCircle2 } from "lucide-react";
+import { ArrowDown, CheckCircle2, Play } from "lucide-react";
 
 export default function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -19,16 +19,27 @@ export default function Hero() {
             ref={containerRef}
             className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-charcoal"
         >
-            {/* Parallax Background */}
+            {/* Cinematic Video Background */}
             <motion.div
                 className="absolute inset-0 z-0"
                 style={{ y, opacity }}
             >
-                <div className="absolute inset-0 bg-black/40 z-10" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 z-10" />
+                <div className="absolute inset-0 bg-black/50 z-10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-black/30 z-10" />
 
-                {/* Placeholder Pattern - Replace with Video/Image */}
-                <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-60"></div>
+                {/* Noise texturizer for film grain effect */}
+                <div className="absolute inset-0 opacity-[0.03] z-10 pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover scale-105"
+                >
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-student-working-in-class-at-school-41662-large.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
             </motion.div>
 
             {/* Content */}
@@ -38,80 +49,71 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    <span className="inline-block px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-sm font-medium tracking-widest uppercase mb-6 text-gold/90">
+                    <span className="inline-block px-6 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs md:text-sm font-heading font-medium tracking-[0.2em] uppercase mb-8 text-gold/90 animate-pulse">
                         Admissions Open for 2025-26
                     </span>
                 </motion.div>
 
                 <motion.h1
-                    className="font-display text-5xl md:text-7xl lg:text-8xl mb-6 leading-tight tracking-tight"
-                    initial={{ opacity: 0, y: 30 }}
+                    className="font-display text-5xl md:text-8xl lg:text-9xl mb-8 leading-[0.9] tracking-tighter"
+                    initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
+                    transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 >
-                    Intelligence + Character <br />
-                    <span className="italic font-light text-white/90">The Goal of True Education</span>
+                    Excellence <br />
+                    <span className="italic font-light text-white/80">Redefined</span>
                 </motion.h1>
 
                 <motion.p
-                    className="max-w-2xl mx-auto text-lg md:text-xl text-white/70 mb-10 font-light leading-relaxed"
+                    className="max-w-2xl mx-auto text-lg md:text-xl text-white/60 mb-12 font-light leading-relaxed"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                    Sri Gnanodaya Schools provide a world-class foundation for your child's future,
-                    combining academic excellence with moral integrity in the heart of Kanuru.
+                    With a <strong className="text-white font-normal">strong commitment towards academics</strong>,
+                    we provide a world-class foundation for your child's future.
                 </motion.p>
 
                 <motion.div
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-6"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.8 }}
                 >
                     <a
                         href="#programs"
-                        className="group relative px-8 py-4 rounded-full bg-gold text-charcoal font-heading font-bold tracking-wide overflow-hidden transition-transform hover:-translate-y-1"
+                        className="group relative px-8 py-4 rounded-full bg-gold text-charcoal font-heading font-bold tracking-wide overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(212,175,55,0.6)]"
                     >
-                        <span className="relative z-10">Explore Programs</span>
-                        <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+                        <span className="relative z-10 flex items-center gap-2">
+                            Explore Campus
+                        </span>
                     </a>
                     <a
-                        href="#contact"
-                        className="group px-8 py-4 rounded-full border border-white/30 bg-white/5 backdrop-blur-sm text-white font-heading font-medium tracking-wide hover:bg-white/10 transition-all hover:-translate-y-1"
+                        href="#video-tour"
+                        className="group px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm text-white font-heading font-medium tracking-wide hover:bg-white/10 transition-all hover:scale-105 flex items-center gap-3"
                     >
-                        Book a Visit
+                        <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-gold group-hover:text-charcoal transition-colors">
+                            <Play size={12} fill="currentColor" />
+                        </span>
+                        <span>Watch Video</span>
                     </a>
-                </motion.div>
-
-                {/* USP Tickers */}
-                <motion.div
-                    className="mt-16 flex flex-wrap justify-center gap-6 md:gap-12 text-sm font-medium text-white/60"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 1.2 }}
-                >
-                    {[
-                        "No Donations",
-                        "100% Study Guarantee",
-                        "Low Student-Teacher Ratio",
-                        "Transport Facility"
-                    ].map((usp) => (
-                        <div key={usp} className="flex items-center gap-2">
-                            <CheckCircle2 size={16} className="text-gold" />
-                            <span>{usp}</span>
-                        </div>
-                    ))}
                 </motion.div>
             </div>
 
             {/* Scroll Indicator */}
             <motion.div
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-white/30"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 text-white/20 flex flex-col items-center gap-2"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.5, duration: 1 }}
             >
-                <ArrowDown size={32} />
+                <div className="text-[10px] tracking-[0.2em] uppercase">Scroll</div>
+                <motion.div
+                    animate={{ y: [0, 8, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                >
+                    <ArrowDown size={20} />
+                </motion.div>
             </motion.div>
         </section>
     );
