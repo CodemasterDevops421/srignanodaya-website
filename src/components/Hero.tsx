@@ -53,14 +53,13 @@ export default function Hero() {
                     transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
                     style={{ x: springX, y: springY }}
                 >
-                    <img
+                    <Image
                         src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop"
                         alt="Sri Gnanodaya School Campus"
-                        className="w-full h-full object-cover"
-                        style={{ position: 'absolute', inset: 0 }}
-                    // Note: Using img tag here because next/image inside motion.div sometimes causes hydration issues with fill
-                    // But wait, user wants BEST performance. 
-                    // Actually, I should use next/image but pass it as a child.
+                        fill
+                        priority
+                        className="object-cover"
+                        sizes="100vw"
                     />
                 </motion.div>
             </motion.div>
@@ -124,7 +123,7 @@ export default function Hero() {
             </div >
 
             {/* Scroll Indicator */}
-            < motion.div
+            <motion.div
                 className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 text-white/20 flex flex-col items-center gap-2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
