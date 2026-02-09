@@ -7,6 +7,7 @@ import Hero from "@/components/Hero";
 import Programs from "@/components/Programs";
 import Facilities from "@/components/Facilities";
 import Services from "@/components/Services";
+import Gallery from "@/components/Gallery";
 import Stats from "@/components/Stats";
 import Testimonials from "@/components/Testimonials";
 import Admissions from "@/components/Admissions";
@@ -44,6 +45,7 @@ export default function Home() {
       <Programs />
       <Facilities />
       <Services />
+      <Gallery />
       <Testimonials />
       <Admissions />
       <Footer />
