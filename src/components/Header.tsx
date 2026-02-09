@@ -62,22 +62,22 @@ export default function Header() {
                     {/* Desktop Nav */}
                     <nav className="hidden lg:flex items-center gap-8">
                         {navLinks.map((link) => (
-                            <Link
+                            <a
                                 key={link.name}
                                 href={link.href}
                                 className="text-sm font-medium uppercase tracking-widest relative group text-charcoal hover:text-gold transition-colors"
                             >
                                 {link.name}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full bg-gold" />
-                            </Link>
+                            </a>
                         ))}
 
-                        <Link
+                        <a
                             href="#admissions"
                             className="px-6 py-2.5 rounded-full font-heading font-medium text-sm tracking-wide transition-all hover:-translate-y-0.5 bg-charcoal text-white hover:bg-gold hover:shadow-lg"
                         >
                             Apply Now
-                        </Link>
+                        </a>
                     </nav>
 
                     {/* Mobile Toggle */}
@@ -125,13 +125,13 @@ export default function Header() {
                     }}
                     transition={{ delay: 0.6 }}
                 >
-                    <Link
+                    <a
                         href="#admissions"
                         className="px-8 py-3 rounded-full bg-charcoal text-white font-heading font-medium tracking-wide"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
                         Start Admission
-                    </Link>
+                    </a>
                 </motion.div>
             </motion.div>
         </>
