@@ -24,7 +24,12 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-black/40 z-10" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 z-10" />
 
-                <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+                <motion.div
+                    className="w-full h-full bg-[url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"
+                    initial={{ scale: 1 }}
+                    animate={{ scale: 1.1 }}
+                    transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
+                />
             </motion.div>
 
             {/* Content */}
