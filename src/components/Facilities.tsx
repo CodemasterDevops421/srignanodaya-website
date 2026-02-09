@@ -7,38 +7,38 @@ import { Library, Bus, Utensils, Wifi, Monitor, HeartPulse } from "lucide-react"
 const facilities = [
     {
         icon: Monitor,
-        title: "Computer Lab",
-        desc: "State-of-the-art systems for digital literacy.",
+        title: "Computer Education",
+        desc: "Working knowledge of computers at low cost.",
         image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop"
     },
     {
         icon: Bus,
-        title: "Transport",
-        desc: "Safe and secure fleet covering all major routes.",
+        title: "Van Facility",
+        desc: "Safe transportation available at low cost.",
         image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069&auto=format&fit=crop"
     },
     {
         icon: Library,
-        title: "Library",
-        desc: "Extensive collection of books and digital resources.",
+        title: "A.V. Aids",
+        desc: "Quality education enhanced by Audio-Visual aids.",
         image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070&auto=format&fit=crop"
     },
     {
         icon: Utensils,
-        title: "Hygienic Dining",
-        desc: "Clean environment with R.O. water stations.",
+        title: "Hygienic Environment",
+        desc: "R.O. Water and clean, spacious premises.",
         image: "https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=1932&auto=format&fit=crop"
     },
     {
         icon: HeartPulse,
-        title: "Health Care",
-        desc: "Regular checkups and first-aid facilities.",
+        title: "Baby Care",
+        desc: "Specialized care for toddlers and day care.",
         image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2070&auto=format&fit=crop"
     },
     {
         icon: Wifi,
-        title: "Smart Campus",
-        desc: "Wi-Fi enabled campus with digital classrooms.",
+        title: "No Term Fees",
+        desc: "Affordable education with no hidden donations.",
         image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop"
     }
 ];

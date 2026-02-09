@@ -24,8 +24,21 @@ export default function Header() {
 
     return (
         <>
+            <div className="bg-charcoal text-white/80 text-xs py-2 hidden md:block border-b border-white/10 relative z-50">
+                <div className="container-wide flex justify-between items-center">
+                    <div className="flex gap-6">
+                        <span className="flex items-center gap-2"><Phone size={12} className="text-gold" /> 9390017772, 9397961714</span>
+                        <span className="flex items-center gap-2">✉️ srignanodayaschool@gmail.com</span>
+                    </div>
+                    <div className="flex gap-4">
+                        <span>Kanuru, Vijayawada</span>
+                        <span className="text-gold">Reg: 2637/A5/2022</span>
+                    </div>
+                </div>
+            </div>
+
             <motion.header
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "py-3 bg-white/80 backdrop-blur-md shadow-sm border-b border-white/20" : "py-6 bg-transparent"
+                className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "py-3 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100" : "py-4 bg-white/90 backdrop-blur-md"
                     }`}
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
@@ -33,15 +46,15 @@ export default function Header() {
             >
                 <div className="container-wide flex items-center justify-between">
                     <Link href="/" className="relative z-50 flex items-center gap-3 group">
-                        <div className="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-white font-serif font-bold text-xl overflow-hidden">
+                        <div className="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-charcoal font-serif font-bold text-xl overflow-hidden shadow-lg">
                             <span className="group-hover:scale-110 transition-transform duration-300">S</span>
                         </div>
                         <div className="flex flex-col">
-                            <span className={`font-heading font-bold uppercase tracking-wider leading-none transition-colors ${isScrolled ? "text-charcoal" : "text-charcoal lg:text-white"}`}>
+                            <span className="font-heading font-bold uppercase tracking-wider leading-none text-charcoal transition-colors">
                                 Sri Gnanodaya
                             </span>
-                            <span className={`text-xs tracking-widest uppercase opacity-80 ${isScrolled ? "text-slate" : "text-slate lg:text-white/80"}`}>
-                                Institutions
+                            <span className="text-[10px] tracking-[0.2em] uppercase text-slate/80 font-medium">
+                                Little Soldiers & Concept School
                             </span>
                         </div>
                     </Link>
@@ -52,21 +65,16 @@ export default function Header() {
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className={`text-sm font-medium uppercase tracking-widest relative group ${isScrolled ? "text-charcoal" : "text-white"
-                                    }`}
+                                className="text-sm font-medium uppercase tracking-widest relative group text-charcoal hover:text-gold transition-colors"
                             >
                                 {link.name}
-                                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${isScrolled ? "bg-gold" : "bg-white"
-                                    }`} />
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full bg-gold" />
                             </Link>
                         ))}
 
                         <Link
                             href="#admissions"
-                            className={`px-6 py-2.5 rounded-full font-heading font-medium text-sm tracking-wide transition-all hover:-translate-y-0.5 ${isScrolled
-                                    ? "bg-charcoal text-white hover:bg-gold hover:shadow-lg"
-                                    : "bg-white text-charcoal hover:bg-gold hover:text-white hover:shadow-lg"
-                                }`}
+                            className="px-6 py-2.5 rounded-full font-heading font-medium text-sm tracking-wide transition-all hover:-translate-y-0.5 bg-charcoal text-white hover:bg-gold hover:shadow-lg"
                         >
                             Apply Now
                         </Link>
@@ -77,7 +85,7 @@ export default function Header() {
                         className="lg:hidden relative z-50 p-2 text-charcoal"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
-                        {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} color={isScrolled ? "#36454f" : "#ffffff"} />}
+                        {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                     </button>
                 </div>
             </motion.header>

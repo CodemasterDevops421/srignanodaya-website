@@ -7,22 +7,22 @@ import { ArrowRight, GraduationCap, Baby } from "lucide-react";
 const programs = [
     {
         title: "Little Soldiers",
-        subtitle: "Pre-School",
-        grade: "Baby Care - PP2",
-        description: "A nurturing environment where young minds begin their journey of discovery. Focused on foundational skills, play-based learning, and character building.",
+        subtitle: "The Foundational School",
+        grade: "Baby Care • Daycare • Nursery • PP1 • PP2",
+        description: "A nurturing environment recognised by Govt. of A.P. (RC No. 2637/A5/2022). We offer A/C and Non-A/C classrooms with a focus on holistic child development.",
         color: "bg-gold",
         icon: Baby,
-        features: ["A/C Classrooms", "Play Area", "Caring Staff"],
+        features: ["A/C & Non-A/C Rooms", "Spacious Play Area", "Caring Staff", "R.O. Water"],
         image: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=2070&auto=format&fit=crop"
     },
     {
         title: "Concept School",
-        subtitle: "Primary Education",
-        grade: "1st - 7th Class",
-        description: "Rigorous academic curriculum balanced with creative arts and technology. We prepare students for future challenges with strong conceptual understanding.",
+        subtitle: "Primary Education (1st - 7th)",
+        grade: "Class 1 to 7 (English Medium)",
+        description: "The best school in primary education, committed to strong academics and character building. Featuring computer education and audio-visual aids at low cost.",
         color: "bg-charcoal",
         icon: GraduationCap,
-        features: ["Computer Lab", "Digital Learning", "Low Teacher Ratio"],
+        features: ["Computer Lab", "A.V. Aids", "No Donations / No Term Fees", "Van Facility"],
         image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop"
     }
 ];
@@ -35,9 +35,18 @@ export default function Programs() {
 
     const x = useTransform(scrollYProgress, [0, 1], ["1%", "-55%"]);
 
+    const [isMobile, setIsMobile] = React.useState(false);
+
+    React.useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
     return (
-        <section id="programs" ref={targetRef} className="relative h-[300vh] bg-off-white">
-            <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+        <section id="programs" ref={targetRef} className="relative md:h-[300vh] bg-off-white">
+            <div className="md:sticky top-0 flex flex-col md:flex-row md:h-screen items-center overflow-hidden">
 
                 {/* Section Header (Absolute for stickiness inside sticky container) */}
                 <div className="absolute top-10 left-8 md:top-20 md:left-20 z-20 max-w-sm">
@@ -59,11 +68,14 @@ export default function Programs() {
                     </motion.h2>
                 </div>
 
-                <motion.div style={{ x }} className="flex gap-10 pl-[5vw] md:pl-[30vw] min-w-max">
+                <motion.div
+                    style={{ x: isMobile ? 0 : x }}
+                    className="flex flex-col md:flex-row gap-10 pl-4 pr-4 md:pl-[30vw] min-w-full md:min-w-max py-20 md:py-0 overflow-y-auto md:overflow-visible"
+                >
                     {programs.map((program, index) => (
                         <div
                             key={index}
-                            className="group relative h-[70vh] w-[85vw] md:w-[60vw] lg:w-[45vw] overflow-hidden rounded-3xl bg-white shadow-xl transition-transform hover:-translate-y-2"
+                            className="group relative h-[60vh] md:h-[70vh] w-full md:w-[60vw] lg:w-[45vw] overflow-hidden rounded-3xl bg-white shadow-xl transition-transform hover:-translate-y-2 shrink-0"
                         >
                             {/* Image Background */}
                             <div className="absolute inset-0 h-1/2 overflow-hidden">

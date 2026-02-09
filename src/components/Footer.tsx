@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Facebook, Instagram, Twitter, Linkedin, Heart } from "lucide-react";
+import { Facebook, Instagram, Twitter, Linkedin, Heart, MapPin, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -19,54 +19,56 @@ export default function Footer() {
                                 <span className="font-heading font-bold uppercase tracking-wider leading-none text-white">
                                     Sri Gnanodaya
                                 </span>
-                                <span className="text-xs tracking-widest uppercase opacity-60">
-                                    Institutions
+                                <span className="text-[10px] tracking-widest uppercase opacity-60">
+                                    Little Soldiers & Concept School
                                 </span>
                             </div>
                         </div>
 
-                        <p className="text-white/60 leading-relaxed max-w-xs">
-                            Empowering minds with intelligence and character. The foundational school for your child's bright future.
+                        <p className="text-white/60 leading-relaxed max-w-xs text-sm">
+                            "Intelligence + Character is the goal of true education."<br />
+                            Sri Manikanta Rural Educational Society (Reg No. 126/10)
                         </p>
 
-                        <div className="flex gap-4">
-                            {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
-                                <a
-                                    key={i}
-                                    href="#"
-                                    className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-charcoal transition-all duration-300"
-                                >
-                                    <Icon size={18} />
-                                </a>
-                            ))}
+                        <div className="space-y-2 text-sm text-white/80">
+                            <p className="flex items-start gap-3">
+                                <MapPin size={16} className="text-gold shrink-0 mt-1" />
+                                <span>D.No: 2-75, Near Penthu Coast Church,<br />Gandhi Bomma Centre, Kanuru - 520007</span>
+                            </p>
+                            <p className="flex items-center gap-3">
+                                <Phone size={16} className="text-gold shrink-0" />
+                                <span>9390017772, 9397961714</span>
+                            </p>
+                            <p className="flex items-center gap-3">
+                                <Mail size={16} className="text-gold shrink-0" />
+                                <span>srignanodayaschool@gmail.com</span>
+                            </p>
                         </div>
                     </div>
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="font-heading font-bold text-lg mb-6 text-gold">Quick Links</h4>
-                        <ul className="space-y-4">
-                            {["About Us", "Admissions", "Academics", "Gallery", "Contact"].map((link) => (
-                                <li key={link}>
-                                    <a href={`#${link.toLowerCase().replace(' ', '-')}`} className="text-white/60 hover:text-white transition-colors flex items-center gap-2 group">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-gold opacity-0 group-hover:opacity-100 transition-opacity" />
-                                        {link}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
+                        <h4 className="font-heading font-bold text-lg mb-6 text-gold">Management</h4>
+                        <div className="space-y-4 text-white/70 text-sm">
+                            <div>
+                                <strong className="block text-white">V. Sambasiva Rao, M.Sc., B.Ed.</strong>
+                                <span className="text-xs uppercase tracking-wider opacity-70">Correspondent</span>
+                            </div>
+                            <div>
+                                <strong className="block text-white">V. Udaya Lakshmi, B.A.</strong>
+                                <span className="text-xs uppercase tracking-wider opacity-70">Treasurer & Care Taker</span>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Programs */}
                     <div>
-                        <h4 className="font-heading font-bold text-lg mb-6 text-gold">Programs</h4>
-                        <ul className="space-y-4">
-                            {["Little Soldiers (Pre-School)", "Concept School (1-7)", "Day Care", "Summer Camp"].map((link) => (
-                                <li key={link}>
-                                    <a href="#" className="text-white/60 hover:text-white transition-colors flex items-center gap-2 group">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-gold opacity-0 group-hover:opacity-100 transition-opacity" />
-                                        {link}
-                                    </a>
+                        <h4 className="font-heading font-bold text-lg mb-6 text-gold">Our Offerings</h4>
+                        <ul className="space-y-3 text-sm">
+                            {["Baby Care & Daycare", "Nursery", "Pre-Primary (PPI & PPII)", "Primary (1st - 7th)", "Computer Education", "Van Facility", "No Term Fees"].map((link) => (
+                                <li key={link} className="flex items-center gap-2 text-white/60">
+                                    <span className="w-1 h-1 rounded-full bg-gold" />
+                                    {link}
                                 </li>
                             ))}
                         </ul>
@@ -76,25 +78,25 @@ export default function Footer() {
                     <div>
                         <h4 className="font-heading font-bold text-lg mb-6 text-gold">Recognition</h4>
                         <div className="space-y-4 text-white/60 text-sm">
-                            <p className="border-l-2 border-white/20 pl-4 py-1">
+                            <p className="border-l-2 border-gold/50 pl-4 py-1">
                                 <strong className="block text-white mb-1">Little Soldiers</strong>
                                 Recognised by Govt. of A.P.<br />
-                                RC No. 2637/A5/2022
+                                <span className="font-mono text-xs opacity-80">RC No. 2637/A5/2022</span>
                             </p>
-                            <p className="border-l-2 border-white/20 pl-4 py-1">
+                            <p className="border-l-2 border-gold/50 pl-4 py-1">
                                 <strong className="block text-white mb-1">Concept School</strong>
                                 Recognised by Govt. of A.P.<br />
-                                RC No. 230/A5/2024
+                                <span className="font-mono text-xs opacity-80">RC No. 230/A5/2024</span>
                             </p>
                         </div>
                     </div>
 
                 </div>
 
-                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
-                    <p>© 2025 Sri Gnanodaya Educational Society. All rights reserved.</p>
+                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
+                    <p>© 2026 Sri Gnanodaya Educational Society. All rights reserved.</p>
                     <p className="flex items-center gap-1">
-                        Made with <Heart size={14} className="text-red-500 fill-red-500" /> in India
+                        Made with <Heart size={12} className="text-red-500 fill-red-500" /> for Education
                     </p>
                 </div>
             </div>

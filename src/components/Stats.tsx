@@ -30,7 +30,7 @@ function Counter({ value, label }: { value: number; label: string }) {
 }
 
 const stats = [
-    { value: 15, label: "Years of Excellence" },
+    { value: 16, label: "Years of Excellence" },
     { value: 1200, label: "Students Enrolled" },
     { value: 60, label: "Expert Faculty" },
     { value: 100, label: "Results Guaranteed" },

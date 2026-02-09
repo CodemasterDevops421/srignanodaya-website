@@ -37,7 +37,10 @@ export default function Admissions() {
                                 </div>
                                 <div>
                                     <h4 className="font-heading font-bold text-charcoal text-lg mb-1">Visit Us</h4>
-                                    <p className="text-slate-500 leading-relaxed">D.No: 2-75, Near Penthu Coast Church,<br /> Gandhi Bomma Centre, Kanuru - 520007</p>
+                                    <p className="text-slate-500 leading-relaxed text-sm">
+                                        D.No: 2-75, Near Penthu Coast Church,<br />
+                                        Gandhi Bomma Centre, Kanuru - 520007
+                                    </p>
                                 </div>
                             </div>
 
