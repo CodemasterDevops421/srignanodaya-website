@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: srignanodaya-website:latest
+    container_name: srignanodaya-web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - school-net
+
+networks:
+  school-net:
+    driver: bridge
