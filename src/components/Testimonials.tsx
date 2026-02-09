@@ -43,14 +43,15 @@ export default function Testimonials() {
     };
 
     return (
-        <section className="py-32 bg-charcoal text-white overflow-hidden relative">
+    return (
+        <section className="py-20 md:py-24 bg-charcoal text-white overflow-hidden relative">
             {/* Decorative patterns */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-2xl -translate-x-1/2 translate-y-1/2" />
 
             <div className="container-narrow relative z-10">
                 <motion.div
-                    className="text-center mb-16"
+                    className="text-center mb-12"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -58,10 +59,10 @@ export default function Testimonials() {
                     <span className="text-gold font-heading font-bold tracking-widest uppercase text-sm">
                         Voices of Trust
                     </span>
-                    <h2 className="text-display text-5xl mt-4">Community Stories</h2>
+                    <h2 className="text-display text-4xl md:text-5xl mt-4">Community Stories</h2>
                 </motion.div>
 
-                <div className="relative min-h-[400px] flex items-center justify-center">
+                <div className="relative min-h-[300px] flex items-center justify-center">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={currentIndex}
@@ -69,23 +70,23 @@ export default function Testimonials() {
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.9 }}
                             transition={{ duration: 0.4 }}
-                            className="bg-white/5 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-3xl max-w-4xl w-full relative"
+                            className="bg-white/5 backdrop-blur-md border border-white/10 p-6 md:p-10 rounded-3xl max-w-4xl w-full relative"
                         >
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-charcoal p-4 rounded-full border border-white/10">
-                                <Quote size={32} className="text-gold" />
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-charcoal p-3 rounded-full border border-white/10">
+                                <Quote size={24} className="text-gold" />
                             </div>
 
-                            <div className="flex flex-col md:flex-row items-center gap-8 mt-6">
+                            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 mt-4">
                                 {/* Avatar */}
-                                <div className={`w-20 h-20 rounded-full ${testimonials[currentIndex].color} flex items-center justify-center text-2xl font-bold tracking-widest shadow-lg shrink-0`}>
+                                <div className={`w-16 h-16 md:w-20 md:h-20 rounded-full ${testimonials[currentIndex].color} flex items-center justify-center text-xl md:text-2xl font-bold tracking-widest shadow-lg shrink-0`}>
                                     {testimonials[currentIndex].initials}
                                 </div>
 
                                 <div className="text-center md:text-left flex-1">
-                                    <div className="flex gap-1 justify-center md:justify-start text-gold mb-4">
-                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={16} fill="currentColor" />)}
+                                    <div className="flex gap-1 justify-center md:justify-start text-gold mb-3">
+                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={14} fill="currentColor" />)}
                                     </div>
-                                    <p className="text-xl md:text-2xl font-display leading-relaxed mb-6 italic text-white/90">
+                                    <p className="text-lg md:text-xl font-display leading-relaxed mb-4 italic text-white/90">
                                         "{testimonials[currentIndex].content}"
                                     </p>
                                     <div>
