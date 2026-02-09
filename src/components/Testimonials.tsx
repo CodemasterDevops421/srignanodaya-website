@@ -43,7 +43,6 @@ export default function Testimonials() {
     };
 
     return (
-    return (
         <section className="py-20 md:py-24 bg-charcoal text-white overflow-hidden relative">
             {/* Decorative patterns */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
